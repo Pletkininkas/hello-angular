@@ -1,0 +1,23 @@
+<div class="row d-flex justify-content-center" style="display: table">
+  <!-- left panel -->
+  <div class="col-sm-9 col-md-2">
+    <h2>Recent posts</h2>
+    <div class="left-panel-content-margin">
+      <div *ngFor="let post of posts; let i = index">
+        <div class="text-left">
+          <a href="#">Post #{{ i + 1 }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content -->
+  <div class="col-sm-9 col-md-4">
+    <div *ngFor="let post of posts; let i = index">
+      <app-post-entry
+        [postName]="'Post #' + (i + 1)"
+        [postText]="post"
+      ></app-post-entry>
+      <br />
+    </div>
+  </div>
+</div>
